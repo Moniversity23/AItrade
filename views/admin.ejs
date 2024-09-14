@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/aitrade.css">
+  <title>Deposit Funds - <%= isAdmin ? Admin : 'Guest' %></title>
+</head>
+<body>
+  <h1>Admin Panel</h1>
+
+  <h2>Pending Deposits</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Amount</th>
+        <th>Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (const deposit of deposits) { %>
+        <tr>
+          <td><%= deposit.user.username %></td>
+          <td><%= deposit.amount %></td>
+          <td><%= new Date(deposit.date).toLocaleString() %></td>
+          <td>
+            <form action="/admin/deposit/approve/<%= deposit._id %>" method="POST">
+              <button type="submit">Approve</button>
+            </form>
+            <form action="/admin/deposit/reject/<%= deposit._id %>" method="POST">
+              <button type="submit">Reject</button>
+            </form>
+          </td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+
+  <h2>Pending Withdrawals</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Amount</th>
+        <th>Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (const withdrawal of withdrawals) { %>
+        <tr>
+          <td><%= withdrawal.user.username %></td>
+          <td><%= withdrawal.amount %></td>
+          <td><%= new Date(withdrawal.date).toLocaleString() %></td>
+          <td>
+            <form action="/admin/withdrawal/approve/<%= withdrawal._id %>" method="POST">
+              <button type="submit">Approve</button>
+            </form>
+            <form action="/admin/withdrawal/reject/<%= withdrawal._id %>" method="POST">
+              <button type="submit">Reject</button>
+            </form>
+          </td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</body>
+</html>

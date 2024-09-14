@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="/aitrade.css">
+  <title>Withdraw Funds - <%= user ? user : 'Guest' %></title>
+</head>
+<body>
+  <div>
+    <% if (!user) { %>
+      <script>window.location.href = "/login";</script>
+    <% } %>
+    <div class="sub-head">
+      <ul>
+        <li class="logo-container">
+          <img src="/image/logo-bg.webp" alt="AItrade Logo" class="logo">
+        </li>
+        <li class="intro">
+          <h4><%= user %></h4>
+        </li>
+      </ul>
+    </div>
+    <header>
+      <div>
+        <ul>
+          
+        </ul>
+      </div>
+    </header>
+    <nav class="container">
+      <div class="stats">
+        <ul>
+          <li><a href="/Transactions"><i class="fas fa-history"></i> Transactions</a></li>
+          <li><a href="/deposit"><i class="fas fa-plus-circle"></i> Deposit</a></li>
+        </ul>
+      </div>
+      </nav>
+    <div class="container former">
+      <% if (title === 'Withdraw Funds') { %>
+        <h1>Withdraw Funds</h1>
+        <div class="payimg">
+          <img src="/image/download.png" alt="Paystack Logo">  
+        </div>
+        <form id="withdrawalForm" method="POST" action="/withdraw">
+            <label for="amount">Withdrawal Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+            
+            <label for="accountNumber">Bank Account Number:</label>
+            <input type="text" id="accountNumber" name="accountNumber" required>
+            
+            <label for="bankCode">Bank Code:</label>
+            <select id="bankCode" name="bankCode" required>
+                <!-- Dynamically populate bank codes using Paystack's API -->
+                <option value="044">Test Bank</option>
+                <option value="044">Access Bank</option>
+                <option value="011">Fidelity Bank PLC</option>
+                <option value="011">First Bank</option>
+                <option value="044">First City Monument Bank Plc</option>
+                <option value="011">Guaranty Trust Bank Plc </option>
+                <option value="044">Sterling Bank Plc</option>
+                <option value="011">Zenith Bank Plc</option>
+                <!-- Add other banks as needed -->
+            </select>
+            
+            <button type="submit">Withdraw</button>
+        </form>
+        
+      <% } %>
+    </div>
+  </div>
+  <footer>
+    <ul class="footer-nav">
+      <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="/Support"><i class="fas fa-headset"></i> Support</a></li>
+    <li><a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+  </footer>
+</body>
+</html>

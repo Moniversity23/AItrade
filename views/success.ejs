@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/aitrade.css">
+  <title>Payment Success</title>
+</head>
+<body>
+  <div class="sub-head"></div>
+    
+    <ul>
+      <li class="logo-container">
+        <img src="/image/logo-bg.webp" alt="AItrade Logo" class="logo">
+      </li>
+    </ul>
+  </div>
+
+  <header>
+    <div class="header-info stats">
+      <ul>
+        
+      </ul>
+    </div>
+  </header>
+  <main class="container done">
+      <h1>Payment Successful!</h1>
+      <p>Thank you, <%= user %>! Your payment of ₦<%= amount %> was successful.</p>
+      <p>Transaction Reference: <%= reference %></p>
+      <a href="/">Go back to Home</a>
+      <a href="/transactions">View Transaction History</a> <!-- Link to transaction history -->
+  </main>
+</body>
+</html>

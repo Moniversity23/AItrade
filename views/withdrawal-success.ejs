@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/aitrade.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Withdrawal Success</title>
+</head>
+<body>
+     <div class="sub-head"></div>
+    
+    <ul>
+      <li class="logo-container">
+        <img src="/image/logo-bg.webp" alt="AItrade Logo" class="logo">
+      </li>
+    </ul>
+  </div>
+
+  <header>
+    <div class="header-info stats">
+      <ul>
+        
+      </ul>
+    </div>
+  </header>
+  <main class="container done">
+        <h1>Withdrawal Successful!</h1>
+        <p>Dear <%= user %>,</p>
+        <p>Your withdrawal of <%= amount %> has been processed successfully.</p>
+        <p>Your remaining balance is:</p>
+        <ul>
+            <li style="color: rgb(168, 249, 173);">Capital: <%= capital %></li>
+            <li style="color: rgb(168, 249, 173);">Profit: <%= profit %></li>
+        </ul>
+        <p style="color: rgb(255, 255, 255);">Please note that successful withdrawal can take up to 24hrs to be completed, contact us if delay goes beyound that</p>
+        <a href="/">Go to Home</a>
+  </main>
+</body>
+</html>

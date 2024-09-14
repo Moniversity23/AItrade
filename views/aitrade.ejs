@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/aitrade.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <title>AItrade - <%= user ? user : 'Guest' %></title>
+</head>
+<body>
+  <div class="sub-head">
+    
+    <ul>
+      <li class="logo-container">
+        <img src="/image/logo-bg.webp" alt="AItrade Logo" class="logo">
+      </li>
+      <li class="intro">
+        <h4><%= user %></h4>
+      </li>
+    </ul>
+  </div>
+
+  <header>
+    <div class="header-info stats">
+      <ul>
+        <li>Capital <span> ₦ <%= data.capital.toFixed(2) %></span></li>
+        <li>Profit <span> ₦ <%= data.profit.toFixed(2) %></span></li>
+        <li>Total <span> ₦ <%= (data.capital + data.profit).toFixed(2) %></span></li>
+      </ul>
+    </div>
+  </header>
+  <nav class="container">
+    <div >
+      <ul>
+        <li><a href="/withdraw"><i class="fas fa-wallet"></i> Withdraw</a></li>
+        <li><a href="/deposit"><i class="fas fa-plus-circle"></i> Deposit</a></li>
+        <li ><a href="/Transactions" style="padding: 12% 10% 12%;"><i class="fas fa-history"></i> Transactions</a></li>
+      </ul>
+    </div>
+    </nav>
+    <main class="container">
+      <div >
+        <p>
+          Welcome to AItrade! Enjoy a guaranteed 15% return on your capital every 30 days. Simply deposit, and watch your earnings grow daily. We prioritize security and simplicity to offer you a seamless investment experience. Make your deposit today and take your step toward financial freedom!
+        </p>
+      </div>
+    </main>
+    
+
+
+    <footer>
+      <ul class="footer-nav">
+        <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="/Support"><i class="fas fa-headset"></i> Support</a></li>
+        <li><a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+      </ul>
+    </footer>
+
+</body>
+</html>
