@@ -8,7 +8,7 @@ const flash = require('connect-flash');
 const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
 const ejs = require('ejs');
-const OneSignal = require('onesignal-node');
+//const OneSignal = require('onesignal-node');
 const crypto = require('crypto');
 const axios = require('axios');
 const dotenv = require('dotenv');
@@ -23,6 +23,8 @@ const router = express.Router();
 
 
 const app = express();
+app.use(express.static('public'));
+
 const port = process.env.PORT || 4000;
 
 // Replace with your actual connection string (avoid storing directly in code)
@@ -76,7 +78,7 @@ app.use(
 );
 
 // Initialize OneSignal Client
-const oneSignalClient = new OneSignal.Client({
+/*const oneSignalClient = new OneSignal.Client({
   userAuthKey: 'MmU2ODIzOTMtYTEyNy00NmZhLTllYmItYTlmYzc4NDAwNjhj',  // Replace with your actual User Auth Key
   app: { 
     appAuthKey: 'MDhkZjIyNGMtMDNiZC00NjQxLTk5YzgtZmY4ZTI4ZWYyZDUy',  // Replace with your actual REST API Key
@@ -99,7 +101,7 @@ const sendWithdrawalNotification = async (user, amount) => {
   } catch (error) {
     console.error('Error sending notification:', error);
   }
-};
+};*/
 
 app.use(flash());
 
@@ -378,10 +380,10 @@ app.post('/withdraw', async (req, res) => {
     await newTransaction.save();
 
      // Trigger OneSignal Notification for Withdrawal
-     sendWithdrawalNotification(user, amount);
+     //sendWithdrawalNotification(user, amount);
 
     // Return success response
-    res.render('withdrawal-success.ejs', {
+   res.render('withdrawal-success.ejs', {
       user: user.username,
       amount: amount,
       capital: user.capital,
