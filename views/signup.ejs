@@ -4,6 +4,127 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="AItrade.css">
+  <style>
+    :root {
+      --primary-color: #16be32; /* Deep Blue */
+      --secondary-color: #979f92e7; /* Light Gray */
+      --background: url('/image/bg.webp'); /* Background image */
+      --text-color: #1B5E20; /* Dark Gray */
+      --accent-color: #ff9900; /* Warm Orange */
+      --border-radius: 8px;
+      --box-shadow: 0 2px 4px rgba(215, 205, 205, 0.906);
+    }
+
+
+    /* Apply the gradient to the body background */
+    /* Base styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--background) no-repeat center center fixed;
+      background-size: cover;
+      filter: blur(1px); /* Apply blur only to the background */
+      z-index: -2; /* Ensure the background stays behind the text */
+    }
+    .stats {
+      display: flex;
+      float: left;
+      flex-direction: row;
+      align-items: center;
+      padding: 10px 0;
+    }
+    .stats ul li{
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+
+    .stats div {
+      margin: 5px 0;
+    }
+
+    /* Buttons */
+    button {
+      background-color: dodgerblue;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: var(--accent-color);
+    }
+    .formers{
+      margin-top: -5%;
+    }
+    .former{
+      margin-top: -15%;
+    }
+    /* Forms */
+    form {
+      background-color: var(--secondary-color);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="number"],
+    form input[type="password"],
+    form select,
+    form textarea {
+      width: 94%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #cccccc;
+      border-radius: var(--border-radius);
+    }
+
+    form input[type="submit"] {
+      background-color: var(--primary-color);
+      color: #ffffff;
+      border: none;
+      padding: 10px;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    form input[type="submit"]:hover {
+      background-color: var(--accent-color);
+    }
+
+  </style>
   <title>AItrade Signup</title>
 </head>
 <body>
